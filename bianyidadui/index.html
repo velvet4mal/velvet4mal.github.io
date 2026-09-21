@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>便衣大队-公安特警反恐处突与实战训练指南</title>
+    <meta name="description" content="便衣大队-公安特警反恐处突与实战训练指南。本站提供便衣侦查战术、反恐防暴技能、隐蔽执法规范及警队装备展示，助力警务实战能力提升。">
+    <meta name="keywords" content="便衣大队,公安特警,反恐处突,隐蔽执法,警务实战,特警装备">
+    <style>
+        :root {
+            --primary-color: #1a3b5d;
+            --secondary-color: #2c5282;
+            --accent-color: #c53030;
+            --bg-light: #f7fafc;
+            --text-main: #2d3748;
+            --text-light: #718096;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #63b3ed;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        nav a:hover, nav a.active {
+            opacity: 1;
+            color: #63b3ed;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 59, 93, 0.85), rgba(26, 59, 93, 0.7)), url('https://picsum.photos/seed/police/1920/600') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #9b2c2c;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -17px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+
+        /* Mission Cards */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img {
+            height: 180px;
+            background-color: #cbd5e0;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .card-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .card-link {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .card-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Tactics Section */
+        .tactics-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .tactics-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .tactic-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .tactic-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .tactic-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background-color: #ebf8ff;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .sidebar-box {
+            background: var(--primary-color);
+            color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+
+        .sidebar-box h3 {
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+        }
+
+        .check-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #68d391;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 15px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: none; /* JS Toggle */
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a202c;
+            color: #a0aec0;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #2d3748;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                order: 3;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 20px 0;
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .tactics-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="logo">
+            <span>◆</span> 便衣大队
+        </a>
+        <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#mission">职能任务</a></li>
+                <li><a href="#tactics">侦查战术</a></li>
+                <li><a href="#equipment">装备规范</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>便衣侦查：城市暗处的守护者</h1>
+            <p>深入隐秘战线，打击犯罪，维护社会治安。了解公安便衣大队的实战理念、战术应用与装备标准。</p>
+            <a href="#mission" class="cta-btn">了解职能</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Mission Section -->
+        <section id="mission">
+            <div class="section-header">
+                <h2 class="section-title">核心职能与任务</h2>
+            </div>
+            <div class="mission-grid">
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/police1/400/300" alt="反恐处突演练">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">反恐防暴处突</h3>
+                        <p class="card-text">应对重大突发事件、恐怖袭击及群体性事件，具备快速反应、现场控制及武力处置能力。</p>
+                        <a href="#" class="card-link">查看处置流程</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/police2/400/300" alt="街面巡逻">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">街面便衣巡逻</h3>
+                        <p class="card-text">在人流密集区域开展隐蔽巡逻，直接打击现行犯罪，震慑犯罪分子，提升群众安全感。</p>
+                        <a href="#" class="card-link">巡逻战术要点</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/police3/400/300" alt="抓捕嫌疑人">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">重点目标抓捕</h3>
+                        <p class="card-text">针对逃犯、重大犯罪嫌疑人进行跟踪、守候与抓捕，确保犯罪分子无处遁形。</p>
+                        <a href="#" class="card-link">抓捕案例分析</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Tactics Section -->
+        <section id="tactics">
+            <div class="section-header">
+                <h2 class="section-title">侦查战术与规范</h2>
+            </div>
+            <div class="tactics-layout">
+                <div class="tactics-list">
+                    <div class="tactic-item">
+                        <div class="tactic-info">
+                            <h3>跟踪守候与便衣接应</h3>
+                            <p>利用便衣优势，通过长时间蹲守掌握嫌疑人活动规律，制定周密的接应方案，确保抓捕一击即中。</p>
+                        </div>
+                        <span class="tag">战术</span>
+                    </div>
+                    <div class="tactic-item">
+                        <div class="tactic-info">
+                            <h3>公开与隐蔽相结合</h3>
+                            <p>在特定时间或区域使用便衣，其余时间通过警车或便装混入人群，形成虚实结合的侦查网络。</p>
+                        </div>
+                        <span class="tag">布控</span>
+                    </div>
+                    <div class="tactic-item">
+                        <div class="tactic-info">
+                            <h3>现场控制与证据收集</h3>
+                            <p>抓捕过程中迅速控制现场，固定电子证据，保护犯罪现场，防止嫌疑人销毁证据或逃跑。</p>
+                        </div>
+                        <span class="tag">执法规范</span>
+                    </div>
+                    <div class="tactic-item">
+                        <div class="tactic-info">
+                            <h3>信息化侦查手段</h3>
+                            <p>运用大数据分析、人脸识别等技术辅助便衣侦查，提高发现嫌疑人的准确率和效率。</p>
+                        </div>
+                        <span class="tag">科技赋能</span>
+                    </div>
+                </div>
+                <aside>
+                    <div class="sidebar-box">
+                        <h3>便衣执法安全提示</h3>
+                        <ul class="check-list">
+                            <li>严格执行请示报告制度</li>
+                            <li>着装必须符合隐蔽要求</li>
+                            <li>携带装备必须隐蔽存放</li>
+                            <li>抓捕时注意周边环境安全</li>
+                            <li>严禁单独行动或酒后执勤</li>
+                            <li>妥善保管执法记录仪设备</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Equipment Section -->
+        <section id="equipment">
+            <div class="section-header">
+                <h2 class="section-title">常用装备与配置</h2>
+            </div>
+            <div class="mission-grid">
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">单警装备</h3>
+                        <p class="card-text">包括手铐、催泪喷射器、强光手电、警棍、战术手套等，是便衣民警执行任务的基础保障。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">通讯设备</h3>
+                        <p class="card-text">采用加密无线电台及对讲机，确保组内及指挥中心之间指令畅通，支持语音及数据传输。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">隐蔽摄录器材</h3>
+                        <p class="card-text">如微型针孔摄像头、行车记录仪等，用于收集犯罪证据，保护自身合法权益。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">战术背心</h3>
+                        <p class="card-text">轻量化、隐蔽性强的战术背心，用于携带急救包、备用弹药及通讯设备。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="section-header">
+                <h2 class="section-title">常见问题解答</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">便衣警察与交警有什么区别？ <span>+</span></div>
+                    <div class="faq-answer">
+                        便衣警察主要负责打击刑事犯罪，如盗窃、抢劫、诈骗等，通常不穿警服，混入人群中侦查。交警负责道路交通管理，通常穿着反光背心，在路面指挥交通和处理违章。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">遇到便衣警察盘查如何配合？ <span>+</span></div>
+                    <div class="faq-answer">
+                        遇到便衣警察盘查时，应保持冷静，出示有效身份证件。配合检查是公民的法定义务。如对执法有异议，可在控制后向其所属单位或督察部门反映。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">便衣大队的主要工作区域在哪里？ <span>+</span></div>
+                    <div class="faq-answer">
+                        便衣大队的工作区域通常覆盖整个城市，重点在于治安复杂的火车站、汽车站、商业中心、娱乐场所、夜市等人流密集区域，以及犯罪高发路段。
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>关于便衣大队</h4>
+            <p>致力于打击违法犯罪，维护社会稳定，服务人民群众。以专业、严谨、高效的作风履行职责。</p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#">警务公开</a></li>
+                <li><a href="#">防诈骗指南</a></li>
+                <li><a href="#">网上报案</a></li>
+                <li><a href="#">警民互动</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>联系方式</h4>
+            <ul>
+                <li>报警电话：110</li>
+                <li>监督电话：12389</li>
+                <li>工作时间：24小时</li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2023 便衣大队警务服务平台 版权所有 | 本页面仅供学习与参考</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<script>
+    // Mobile Menu Toggle
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('nav');
+
+    menuBtn.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            // Close others
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            // Toggle current
+            item.classList.toggle('active');
+        });
+    });
+
+    // Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                nav.classList.remove('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
