@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花都东风日产 - 新能源购车指南、售后服务与车型展示平台</title>
+    <meta name="description" content="花都东风日产为您提供最新的轩逸、天籁、奇骏等车型介绍、价格查询、试驾预约及售后服务信息。专注东风日产花都地区经销商服务，致力于打造便捷的一站式购车体验。">
+    <meta name="keywords" content="花都东风日产,东风日产花都店,东风日产4S店,轩逸,天籁,奇骏,新能源车,东风日产4S店">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e60012; /* 东风日产红 */
+            --primary-hover: #b3000f;
+            --secondary-color: #1a1a1a;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        .top-bar {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            font-size: 0.85rem;
+            padding: 0.5rem 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-links a {
+            color: #ccc;
+            margin-left: 1.5rem;
+        }
+
+        .top-links a:hover {
+            color: var(--white);
+        }
+
+        /* 头部 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+            margin-left: 5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--secondary-color);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .header-actions .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .header-actions .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        /* 核心服务卡片 */
+        .services {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-color: transparent;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 车型展示 */
+        .models-section {
+            padding: 4rem 0;
+            background-color: var(--bg-light);
+        }
+
+        .model-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid #ddd;
+            background: var(--white);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border-color: var(--secondary-color);
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .model-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s;
+        }
+
+        .model-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .model-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .model-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .model-card:hover .model-img img {
+            transform: scale(1.05);
+        }
+
+        .model-info {
+            padding: 1.5rem;
+        }
+
+        .model-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .model-tag {
+            display: inline-block;
+            background-color: #ffe6e6;
+            color: var(--primary-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .model-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .model-price span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* 经销商信息 */
+        .dealer-section {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+
+        .dealer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .dealer-map-placeholder {
+            background-color: #e9ecef;
+            border-radius: var(--border-radius);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dealer-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .dealer-item {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        .dealer-item h4 {
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+
+        .dealer-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .contact-btn:hover {
+            text-decoration: underline;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            padding: 4rem 0;
+            background-color: var(--bg-light);
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-question::before {
+            content: 'Q';
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            padding-left: 34px;
+            font-size: 0.95rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: #999;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            .nav-menu {
+                margin: 1rem 0;
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: 0 auto 2rem;
+            }
+
+            .dealer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .top-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部信息条 -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-info">欢迎访问花都东风日产官方服务平台</div>
+            <div class="top-links">
+                <a href="#">预约试驾</a>
+                <a href="#">售后服务</a>
+                <a href="#">联系客服</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 头部导航 -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#e60012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#e60012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#e60012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>东风日产</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#models">车型展示</a></li>
+                    <li><a href="#services">服务项目</a></li>
+                    <li><a href="#dealer">经销商信息</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="btn-primary">立即咨询</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主视觉区域 -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>东风日产花都店<br>您的首选购车与服务伙伴</h1>
+                <p>提供全新轩逸、天籁、奇骏及纯电车型体验。专业的购车顾问团队、透明的价格体系、便捷的售后服务，助您轻松开启美好生活。</p>
+                <a href="#models" class="btn-primary" style="display: inline-block;">浏览热销车型</a>
+            </div>
+            <div class="hero-image">
+                <!-- 使用占位图模拟汽车展示 -->
+                <img src="https://picsum.photos/seed/nissan_sunny/500/350" alt="东风日产轩逸展示图">
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心服务 -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>全方位服务体系</h2>
+                <p>从购车到用车，我们提供一站式贴心服务</p>
+            </div>
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h3>新车选购</h3>
+                    <p>拥有丰富的库存资源，支持多种金融方案及置换服务，满足不同家庭的用车需求。</p>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>售后维修</h3>
+                    <p>原厂配件保障，专业技师团队，提供定期保养、事故维修及车身美容服务。</p>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>新能源服务</h3>
+                    <p>专属充电桩安装指导，电池检测与维护，为您提供无忧的绿色出行体验。</p>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon">📞</div>
+                    <h3>24小时救援</h3>
+                    <p>全天候道路救援服务，无论是爆胎、没电还是故障，我们随时待命为您排忧解难。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 车型展示 -->
+    <section id="models" class="models-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>热销车型推荐</h2>
+                <p>选择适合您的座驾，开启精彩旅程</p>
+            </div>
+            
+            <div class="model-tabs">
+                <button class="tab-btn active">全部</button>
+                <button class="tab-btn">轿车</button>
+                <button class="tab-btn">SUV</button>
+                <button class="tab-btn">新能源</button>
+            </div>
+
+            <div class="model-grid">
+                <article class="model-card">
+                    <div class="model-img">
+                        <img src="https://picsum.photos/seed/xeora/400/300" alt="东风日产天籁">
+                    </div>
+                    <div class="model-info">
+                        <span class="model-tag">舒适家轿</span>
+                        <h3>天籁 (Teana)</h3>
+                        <div class="model-price">13.98万起 <span>起售价</span></div>
+                    </div>
+                </article>
+
+                <article class="model-card">
+                    <div class="model-img">
+                        <img src="https://picsum.photos/seed/serena/400/300" alt="东风日产轩逸">
+                    </div>
+                    <div class="model-info">
+                        <span class="model-tag">国民轿车</span>
+                        <h3>轩逸 (Sylphy)</h3>
+                        <div class="model-price">11.59万起 <span>起售价</span></div>
+                    </div>
+                </article>
+
+                <article class="model-card">
+                    <div class="model-img">
+                        <img src="https://picsum.photos/seed/xtrail/400/300" alt="东风日产奇骏">
+                    </div>
+                    <div class="model-info">
+                        <span class="model-tag">全能SUV</span>
+                        <h3>奇骏 (X-Trail)</h3>
+                        <div class="model-price">17.99万起 <span>起售价</span></div>
+                    </div>
+                </article>
+                
+                <article class="model-card">
+                    <div class="model-img">
+                        <img src="https://picsum.photos/seed/leaf/400/300" alt="东风日产e-POWER">
+                    </div>
+                    <div class="model-info">
+                        <span class="model-tag">新能源</span>
+                        <h3>轩逸·e-POWER</h3>
+                        <div class="model-price">12.59万起 <span>起售价</span></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 经销商信息 -->
+    <section id="dealer" class="dealer-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>花都东风日产4S店</h2>
+                <p>地理位置优越，交通便利，欢迎到店品鉴</p>
+            </div>
+            <div class="dealer-container">
+                <div class="dealer-map-placeholder">
+                    <!-- 模拟地图区域 -->
+                    <div style="text-align: center;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
+                            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                            <line x1="8" y1="2" x2="8" y2="18"></line>
+                            <line x1="16" y1="6" x2="16" y2="22"></line>
+                        </svg>
+                        <p>地图加载中...</p>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem;">广东省广州市花都区新华镇某某大道</p>
+                    </div>
+                </div>
+                <div class="dealer-info-list">
+                    <div class="dealer-item">
+                        <h4>营业时间</h4>
+                        <p>周一至周日：08:30 - 18:00</p>
+                        <p>节假日：09:00 - 18:00</p>
+                    </div>
+                    <div class="dealer-item">
+                        <h4>联系电话</h4>
+                        <p>020-1234 5678</p>
+                        <p>24小时救援专线：020-8765 4321</p>
+                        <a href="#" class="contact-btn">在线预约试驾 &rarr;</a>
+                    </div>
+                    <div class="dealer-item">
+                        <h4>交通路线</h4>
+                        <p>地铁9号线花都广场站B出口，步行500米即到。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+                <p>解决您的购车与用车疑惑</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">花都东风日产提供哪些金融贷款服务？</div>
+                    <div class="faq-answer">
+                        我们与多家银行及金融机构合作，提供低首付、低利率的购车贷款方案，以及0息金融政策。具体方案可根据您的个人资质和所选车型进行详细咨询。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">购买新能源车型有什么补贴政策？</div>
+                    <div class="faq-answer">
+                        目前符合条件的新能源汽车可享受国家及地方购置税减免政策。具体补贴金额请咨询店内销售顾问，我们将为您提供最新的政策解读。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">售后保养需要预约吗？</div>
+                    <div class="faq-answer">
+                        为了节省您的等待时间，建议您通过电话或在线系统提前预约保养时间。我们将为您安排专属服务顾问，确保保养流程高效顺畅。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        花都东风日产4S店致力于为广汽本田客户提供最优质的购车体验和售后服务。我们秉承“客户至上”的服务理念，不断优化服务流程，提升客户满意度。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#models">车型大全</a></li>
+                        <li><a href="#services">金融服务</a></li>
+                        <li><a href="#dealer">预约试驾</a></li>
+                        <li><a href="#">二手车置换</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="#">保养手册下载</a></li>
+                        <li><a href="#">常见故障排查</a></li>
+                        <li><a href="#">配件价格查询</a></li>
+                        <li><a href="#">客户投诉建议</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>地址：广州市花都区新华镇XX路XX号</li>
+                        <li>电话：020-1234 5678</li>
+                        <li>邮箱：service@fhdongfengnissan.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 花都东风日产4S店 版权所有 | 本页面仅供参考，具体信息以店内实际为准</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                      </html>
