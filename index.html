@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周正富-知名艺术家与学术研究平台</title>
+    <meta name="description" content="周正富官方网站，收录其艺术作品、学术研究成果、展览信息及创作理念。探索其独特的艺术风格与学术贡献。">
+    <meta name="keywords" content="周正富,艺术家,学术研究,艺术作品,展览">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #c5a065;
+            --bg-color: #f9f9f9;
+            --text-color: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --spacing-unit: 20px;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--white);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://picsum.photos/seed/artstudio/1920/1080'); /* Placeholder for artist studio vibe */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* About Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title .divider {
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: var(--border-radius);
+            box-shadow: 20px 20px 0 var(--accent-color);
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .stat-item h4 {
+            font-size: 32px;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .stat-item span {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Works Gallery */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .work-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .work-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .work-img {
+            height: 250px;
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        .work-info {
+            padding: 25px;
+        }
+
+        .work-category {
+            font-size: 12px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .work-info h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .work-info p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more::after {
+            content: '→';
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .read-more:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Academic Research */
+        .research-list {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .research-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .research-item:last-child {
+            border-bottom: none;
+        }
+
+        .research-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .research-meta {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .research-tag {
+            background-color: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #555;
+            margin-right: 10px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .contact-section .section-title h2 {
+            color: var(--white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-icon {
+            margin-right: 15px;
+            font-size: 20px;
+            color: var(--accent-color);
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background-color: #2d2d2d;
+            color: var(--white);
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #888;
+            padding: 50px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                position: relative;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .about-grid, .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .stats {
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">ZHENG<span>FU</span>.</a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#about">关于艺术家</a></li>
+                    <li><a href="#works">艺术作品</a></li>
+                    <li><a href="#research">学术研究</a></li>
+                    <li><a href="#contact">联系合作</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>周正富</h1>
+                <p>探索传统与现代的边界，用艺术语言诠释时代精神。</p>
+                <div class="hero-buttons">
+                    <a href="#works" class="btn">浏览作品</a>
+                    <a href="#contact" class="btn btn-outline">预约展览</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/artist_portrait/600/700" alt="周正富肖像">
+                    </div>
+                    <div class="about-text">
+                        <div class="section-title" style="text-align: left; margin-bottom: 30px;">
+                            <h2>关于艺术家</h2>
+                            <div class="divider" style="margin: 0;"></div>
+                        </div>
+                        <h3>致力于视觉艺术的深耕与学术探索</h3>
+                        <p>周正富是一位在当代艺术领域具有广泛影响力的视觉艺术家。他的作品融合了东方美学哲学与西方现代主义技法，通过对光影、材质与空间的独特处理，构建出既富有诗意又具有强烈现实批判性的视觉场域。</p>
+                        <p>多年来，周正富专注于抽象表现主义与具象叙事的结合，其创作深受后现代主义思潮影响，同时又根植于深厚的传统文化土壤。他不仅在绘画领域取得了卓越成就，更在艺术理论研究和公共艺术装置方面有着深入的实践。</p>
+                        
+                        <div class="stats">
+                            <div class="stat-item">
+                                <h4>15+</h4>
+                                <span>个国家级展览</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4>8</h4>
+                                <span>学术专著</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4>20+</h4>
+                                <span>国际奖项</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Gallery -->
+        <section id="works" class="section" style="background-color: #f0f0f0;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>精选艺术作品</h2>
+                    <div class="divider"></div>
+                </div>
+                
+                <div class="works-grid">
+                    <article class="work-card">
+                        <div class="work-img">
+                            <img src="https://picsum.photos/seed/painting1/400/300" alt="作品名称">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-category">油画系列</span>
+                            <h4>静谧的回响</h4>
+                            <p>通过厚重的笔触与深沉的色调，探讨内心世界的宁静与外部世界的喧嚣之间的张力。</p>
+                            <a href="#" class="read-more">查看详情</a>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <div class="work-img">
+                            <img src="https://picsum.photos/seed/painting2/400/300" alt="作品名称">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-category">水墨实验</span>
+                            <h4>流动的边界</h4>
+                            <p>利用宣纸的渗透特性，表现水与墨在空间中的自由扩散，象征着思维的无限延展。</p>
+                            <a href="#" class="read-more">查看详情</a>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <div class="work-img">
+                            <img src="https://picsum.photos/seed/painting3/400/300" alt="作品名称">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-category">综合材料</span>
+                            <h4>城市碎片</h4>
+                            <p>结合金属、木材与现成品，重构城市记忆，反思现代文明对个体的异化影响。</p>
+                            <a href="#" class="read-more">查看详情</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Research -->
+        <section id="research" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>学术研究与理论</h2>
+                    <div class="divider"></div>
+                </div>
+                
+                <div class="research-list">
+                    <div class="research-item">
+                        <div>
+                            <span class="research-tag">核心期刊</span>
+                            <div class="research-title">后现代语境下的中国抽象绘画语言重构研究</div>
+                            <div class="research-meta">发表期刊：《美术观察》 | 2022年 第5期</div>
+                        </div>
+                        <a href="#" class="read-more">阅读</a>
+                    </div>
+                    
+                    <div class="research-item">
+                        <div>
+                            <span class="research-tag">论文</span>
+                            <div class="research-title">从具象到抽象：视觉感知的心理机制分析</div>
+                            <div class="research-meta">发表期刊：《艺术百家》 | 2021年 第3期</div>
+                        </div>
+                        <a href="#" class="read-more">阅读</a>
+                    </div>
+
+                    <div class="research-item">
+                        <div>
+                            <span class="research-tag">专著</span>
+                            <div class="research-title">《当代视觉语言的多元共生》</div>
+                            <div class="research-meta">出版社：中国美术学院出版社 | 2020年</div>
+                        </div>
+                        <a href="#" class="read-more">购买</a>
+                    </div>
+
+                    <div class="research-item">
+                        <div>
+                            <span class="research-tag">评论</span>
+                            <div class="research-title">周正富个展：时间的痕迹</div>
+                            <div class="research-meta">来源：艺术网 | 2023年</div>
+                        </div>
+                        <a href="#" class="read-more">阅读</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>联系与合作</h2>
+                    <div class="divider" style="background-color: var(--white);"></div>
+                </div>
+
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>欢迎交流</h3>
+                        <p style="margin-bottom: 30px; opacity: 0.8;">如果您对周正富的艺术作品感兴趣，或希望探讨学术合作、展览及收藏事宜，请通过以下方式联系。</p>
+                        
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <strong>工作室地址</strong>
+                                <p>北京市朝阳区艺术园区 A座 101室</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-icon">✉️</span>
+                            <div>
+                                <strong>电子邮箱</strong>
+                                <p>contact@zhengfu-art.com</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <div>
+                                <strong>联系电话</strong>
+                                <p>+86 10 8888 6666</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('感谢您的留言，我们将尽快与您联系。');">
+                        <div class="form-group">
+                            <input type="text" placeholder="您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="电子邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="主题">
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" placeholder="请输入您的留言内容..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="border:none; cursor:pointer;">发送消息</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col" style="flex: 2; min-width: 300px;">
+                    <a href="#" class="logo" style="color: var(--white); margin-bottom: 15px; display: block;">ZHENG<span>FU</span>.</a>
+                    <p style="color: #666; line-height: 1.8;">周正富致力于通过艺术探索人类情感的深度与广度，连接传统与现代，东方与西方。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#about">关于</a></li>
+                        <li><a href="#works">作品</a></li>
+                        <li><a href="#research">学术</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">微博</a></li>
+                        <li><a href="#">小红书</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 周正富工作室 版权所有. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('show');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('nav-menu').classList.remove('show');
+                }
+            });
+        });
+
+        // Highlight active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav ul li a').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+  </html>
