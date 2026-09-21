@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猎奇-深度探索未知世界与怪谈实录</title>
+    <meta name="description" content="本站致力于收录世界各地真实发生的奇异事件、都市传说、民俗禁忌及未解之谜，为猎奇爱好者提供深度的探索与理性的分析。">
+    <meta name="keywords" content="猎奇, 异闻, 都市传说, 未解之谜, 怪谈, 民俗, 奇闻异事">
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --card-bg: #141418;
+            --text-main: #e0e0e0;
+            --text-sub: #9494a0;
+            --accent: #8b5cf6;
+            --accent-hover: #7c3aed;
+            --border: #2a2a35;
+            --danger: #ef4444;
+            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(10, 10, 12, 0.95);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: #fff;
+        }
+
+        .search-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-sub);
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .search-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            background: linear-gradient(to bottom, rgba(10,10,12,0), var(--bg-color)), 
+                        url('https://picsum.photos/seed/unknown/1600/600') center/cover no-repeat;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-link {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .section-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: var(--accent);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #2a2a35;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-bottom: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin-bottom: 20px;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        /* Special List Style */
+        .list-item {
+            display: flex;
+            gap: 20px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: border-color 0.2s;
+        }
+
+        .list-item:hover {
+            border-color: var(--accent);
+        }
+
+        .list-thumb {
+            width: 200px;
+            height: 120px;
+            flex-shrink: 0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .list-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .list-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .list-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .list-info p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .list-tags span {
+            display: inline-block;
+            background: #2a2a35;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 8px;
+            color: var(--text-sub);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            padding-left: 10px;
+            border-left: 3px solid var(--border);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050507;
+            border-top: 1px solid var(--border);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-top: 15px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-sub);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .list-item {
+                flex-direction: column;
+            }
+
+            .list-thumb {
+                width: 100%;
+                height: 180px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span>◆</span> 猎奇档案
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">都市传说</a></li>
+                <li><a href="#">民俗禁忌</a></li>
+                <li><a href="#">科学未解</a></li>
+                <li><a href="#">真实案例</a></li>
+            </ul>
+        </nav>
+        <button class="search-btn" aria-label="搜索">🔍</button>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="hero-tag">探索未知</span>
+            <h1>在文明的边缘<br>寻找世界的真相</h1>
+            <p>汇集全球范围内真实发生的奇异事件、民俗禁忌与未解之谜，为您揭开那些被隐藏在历史缝隙中的猎奇篇章。</p>
+            <div class="cta-group">
+                <a href="#latest" class="btn btn-primary">阅读最新奇闻</a>
+                <a href="#" class="btn btn-outline">加入讨论社区</a>
+            </div>
+            
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <h3>3,200+</h3>
+                    <p>收录案例</p>
+                </div>
+                <div class="stat-item">
+                    <h3>85+</h3>
+                    <p>国家地区</p>
+                </div>
+                <div class="stat-item">
+                    <h3>150万</h3>
+                    <p>深度阅读</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>实时更新</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Cases Section -->
+    <section id="latest" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">最新猎奇实录</h2>
+                <a href="#" class="section-link">查看全部 →</a>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-badge">都市传说</span>
+                        <img src="https://picsum.photos/seed/forest/400/300" alt="迷雾森林">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span>2023-10-24</span>
+                            <span>•</span>
+                            <span>2.4k 阅读</span>
+                        </div>
+                        <h3 class="card-title">日本青森县：那座吞噬了无数旅人的“不归林”</h3>
+                        <p class="card-desc">据当地老人回忆，每当夜幕降临，林间便会传来诡异的歌声。多位徒步者进入后失联，警方搜救队仅发现空荡荡的背包...</p>
+                        <div class="card-footer">
+                            <span>深度报道</span>
+                            <a href="#">详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-badge">生物变异</span>
+                        <img src="https://picsum.photos/seed/monster/400/300" alt="深海巨兽">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span>2023-10-22</span>
+                            <span>•</span>
+                            <span>1.8k 阅读</span>
+                        </div>
+                        <h3 class="card-title">深海恐惧症：百慕大三角附近发现的神秘生物尸体</h3>
+                        <p class="card-desc">一位潜水员在执行任务时，意外拍摄到了一种类似史前生物的影像。其骨骼结构完全不符合现代生物分类学，引发了...</p>
+                        <div class="card-footer">
+                            <span>科学推测</span>
+                            <a href="#">详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-badge">民俗禁忌</span>
+                        <img src="https://picsum.photos/seed/ritual/400/300" alt="古老仪式">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span>2023-10-20</span>
+                            <span>•</span>
+                            <span>3.1k 阅读</span>
+                        </div>
+                        <h3 class="card-title">湘西赶尸：揭秘湘西地区流传千年的古老巫术</h3>
+                        <p class="card-desc">虽然现代科学无法完全解释这一现象，但大量史料记载与幸存者的证词表明，在特定的仪式与环境下，人们确实能...</p>
+                        <div class="card-footer">
+                            <span>文化考据</span>
+                            <a href="#">详情</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Deep Dive -->
+    <section class="section" style="background-color: #0f0f13;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">深度专题：被遗忘的角落</h2>
+            </div>
+            <div class="list-item">
+                <div class="list-thumb">
+                    <img src="https://picsum.photos/seed/dungeon/400/300" alt="地下墓穴">
+                </div>
+                <div class="list-info">
+                    <div class="card-meta">
+                        <span>专题</span>
+                        <span>•</span>
+                        <span>历史探险</span>
+                    </div>
+                    <h3>地下世界的秘密：罗马地下墓穴与都市探险者的噩梦</h3>
+                    <p>当我们以为城市表面之下只有管道和电缆时，实际上却隐藏着数千年前的幽灵。探险者们分享的录音与影像资料，记录了那些令人毛骨悚然的回声。</p>
+                    <div class="list-tags">
+                        <span>罗马</span>
+                        <span>探险</span>
+                        <span>历史</span>
+                    </div>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="list-thumb">
+                    <img src="https://picsum.photos/seed/abandoned/400/300" alt="废弃工厂">
+                </div>
+                <div class="list-info">
+                    <div class="card-meta">
+                        <span>专题</span>
+                        <span>•</span>
+                        <span>城市探险</span>
+                    </div>
+                    <h3>废弃医院：为什么深夜的走廊里总有人在走动？</h3>
+                    <p>不仅是《寂静岭》，全球各地的废弃医疗机构都流传着类似的都市传说。通过分析热成像图与传感器数据，我们试图寻找这些“幽灵”的踪迹。</p>
+                    <div class="list-tags">
+                        <span>医院</span>
+                        <span>超自然</span>
+                        <span>都市传说</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">探索分类</h2>
+            </div>
+            <div class="grid-4">
+                <a href="#" class="card" style="padding: 30px; justify-content: center; text-align: center; min-height: 180px;">
+                    <span style="font-size: 2rem; margin-bottom: 10px; display:block;">👻</span>
+                    <span style="font-weight: 600;">灵异鬼怪</span>
+                </a>
+                <a href="#" class="card" style="padding: 30px; justify-content: center; text-align: center; min-height: 180px;">
+                    <span style="font-size: 2rem; margin-bottom: 10px; display:block;">🧬</span>
+                    <span style="font-weight: 600;">生物变异</span>
+                </a>
+                <a href="#" class="card" style="padding: 30px; justify-content: center; text-align: center; min-height: 180px;">
+                    <span style="font-size: 2rem; margin-bottom: 10px; display:block;">🏛️</span>
+                    <span style="font-weight: 600;">古文明遗迹</span>
+                </a>
+                <a href="#" class="card" style="padding: 30px; justify-content: center; text-align: center; min-height: 180px;">
+                    <span style="font-size: 2rem; margin-bottom: 10px; display:block;">🚀</span>
+                    <span style="font-weight: 600;">外星文明</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background-color: #0f0f13;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">常见问题</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">网站上的内容都是真实的吗？</div>
+                    <div class="faq-answer">我们坚持“有图有真相”的原则，所有发布的案例均经过多方资料交叉验证。对于无法证实的传说，我们会明确标注为“都市传说”或“民俗信仰”，以示区分。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何参与投稿？</div>
+                    <div class="faq-answer">我们欢迎探险者、民俗学家和民间传说爱好者投稿。请将您的调查报告发送至投稿邮箱，经过审核后我们将择优发布。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">为什么有些内容看起来很恐怖？</div>
+                    <div class="faq-answer">我们的目标是还原事实本身。为了尊重逝者并保持客观，部分关于犯罪现场、历史悲剧或民俗禁忌的描述可能较为直白，请您在阅读时保持理性与敬畏。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span>◆</span> 猎奇档案
+                </a>
+                <p>致力于为好奇心旺盛的探索者提供一个理性、客观、深度的猎奇信息平台。拒绝低俗，只做深度。</p>
+            </div>
+            <div class="footer-col">
+                <h4>栏目导航</h4>
+                <ul>
+                    <li><a href="#">最新发布</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">深度专题</a></li>
+                    <li><a href="#">图集库</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">团队介绍</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">微博话题</a></li>
+                    <li><a href="#">Bilibili频道</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 猎奇档案. All Rights Reserved. 本站内容仅供学术研究与探索使用。</p>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                          </html>
