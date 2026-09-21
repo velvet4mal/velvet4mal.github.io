@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="紧扣的星星动漫 - 深度解析热门动漫角色关系与剧情走向，提供动漫资讯、角色图鉴及观看指南，打造最专业的二次元粉丝社区。">
+    <meta name="keywords" content="紧扣的星星动漫,动漫资讯,角色图鉴,二次元,动漫推荐">
+    <title>紧扣的星星动漫-深度解析与角色图鉴平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --dark-bg: #2d3436;
+            --light-bg: #dfe6e9;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 导航栏 */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid #b2bec3;
+            outline: none;
+            font-size: 0.9rem;
+            width: 200px;
+            transition: width 0.3s;
+        }
+
+        .search-box input:focus {
+            width: 250px;
+            border-color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(253, 121, 168, 0.4);
+        }
+
+        /* 主要内容区 */
+        main {
+            flex: 1;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            width: 100%;
+            padding: 2rem 1rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* 热门推荐网格 */
+        .anime-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .anime-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .anime-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            background-color: #f1f2f6;
+            color: var(--text-light);
+        }
+
+        .tag.hot {
+            background-color: #ffeaa7;
+            color: #d35400;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* 角色图鉴侧边栏 */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+            }
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .character-list {
+            list-style: none;
+        }
+
+        .character-item {
+            display: flex;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .character-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .character-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .character-info h3 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .character-info p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* 侧边栏 */
+        aside {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            height: fit-content;
+        }
+
+        .sidebar-widget {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 0.5rem;
+        }
+
+        .ranking-list {
+            list-style: none;
+        }
+
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ranking-number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            width: 25px;
+        }
+
+        .ranking-item:nth-child(1) .ranking-number { color: #ff7675; }
+        .ranking-item:nth-child(2) .ranking-number { color: #fdcb6e; }
+        .ranking-item:nth-child(3) .ranking-number { color: #74b9ff; }
+
+        .ranking-title {
+            font-size: 0.95rem;
+            margin-left: 0.5rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--dark-bg);
+            color: #b2bec3;
+            padding: 3rem 1rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: #b2bec3;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .anime-grid {
+                grid-template-columns: 1fr;
+            }
+            .search-box input {
+                width: 120px;
+            }
+            .search-box input:focus {
+                width: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                紧扣的星星动漫<span>社区</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">动漫资讯</a></li>
+                    <li><a href="#">角色图鉴</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">观看指南</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索动漫或角色...">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索扣人心弦的二次元世界</h1>
+            <p>在紧扣的星星动漫，我们深入解析每一部热门作品背后的情感羁绊与剧情走向，为您呈现最详尽的二次元图鉴。</p>
+            <a href="#" class="cta-button">开始探索</a>
+        </div>
+    </section>
+
+    <main>
+        <!-- 热门推荐板块 -->
+        <section id="recommendations">
+            <h2 class="section-title">本周热门推荐</h2>
+            <div class="anime-grid">
+                <!-- 卡片 1 -->
+                <article class="anime-card">
+                    <img src="https://picsum.photos/seed/anime1/400/600" alt="星空之约" class="card-image">
+                    <div class="card-content">
+                        <div class="card-tags">
+                            <span class="tag hot">热门</span>
+                            <span class="tag">恋爱</span>
+                        </div>
+                        <h3 class="card-title">星空之约：羁绊篇</h3>
+                        <p class="card-desc">讲述了两个来自不同星系的少年少女，在浩瀚宇宙中寻找彼此的故事，充满了对未来的希冀与现实的挣扎。</p>
+                    </div>
+                </article>
+
+                <!-- 卡片 2 -->
+                <article class="anime-card">
+                    <img src="https://picsum.photos/seed/anime2/400/600" alt="机械之心" class="card-image">
+                    <div class="card-content">
+                        <div class="card-tags">
+                            <span class="tag">科幻</span>
+                            <span class="tag">冒险</span>
+                        </div>
+                        <h3 class="card-title">机械之心：觉醒</h3>
+                        <p class="card-desc">在近未来世界，拥有自我意识的机器人开始反抗人类的统治，一场关于自由与生存的战争一触即发。</p>
+                    </div>
+                </article>
+
+                <!-- 卡片 3 -->
+                <article class="anime-card">
+                    <img src="https://picsum.photos/seed/anime3/400/600" alt="古风传奇" class="card-image">
+                    <div class="card-content">
+                        <div class="card-tags">
+                            <span class="tag">古风</span>
+                            <span class="tag">武侠</span>
+                        </div>
+                        <h3 class="card-title">剑影流年</h3>
+                        <p class="card-desc">江湖风云变幻，一把断剑引出了一段尘封百年的秘密。主角如何在权谋与仇恨中坚守本心？</p>
+                    </div>
+                </article>
+
+                <!-- 卡片 4 -->
+                <article class="anime-card">
+                    <img src="https://picsum.photos/seed/anime4/400/600" alt="校园日常" class="card-image">
+                    <div class="card-content">
+                        <div class="card-tags">
+                            <span class="tag">校园</span>
+                            <span class="tag">治愈</span>
+                        </div>
+                        <h3 class="card-title">夏日微风</h3>
+                        <p class="card-desc">平淡无奇的青春校园生活，却因为一次偶然的相遇而变得不同寻常，记录下那些闪闪发光的瞬间。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="content-wrapper">
+            <!-- 角色图鉴板块 -->
+            <section id="characters">
+                <h2 class="section-title">经典角色图鉴</h2>
+                <ul class="character-list">
+                    <li class="character-item">
+                        <img src="https://picsum.photos/seed/char1/100/100" alt="角色头像" class="character-avatar">
+                        <div class="character-info">
+                            <h3>星野·光</h3>
+                            <p>《星空之约》主角，拥有操控星光的能力，性格温柔但内心坚定。</p>
+                        </div>
+                    </li>
+                    <li class="character-item">
+                        <img src="https://picsum.photos/seed/char2/100/100" alt="角色头像" class="character-avatar">
+                        <div class="character-info">
+                            <h3>雷恩</h3>
+                            <p>《机械之心》中的反抗军领袖，冷静、理智，为了正义不惜一切代价。</p>
+                        </div>
+                    </li>
+                    <li class="character-item">
+                        <img src="https://picsum.photos/seed/char3/100/100" alt="角色头像" class="character-avatar">
+                        <div class="character-info">
+                            <h3>叶孤鸿</h3>
+                            <p>《剑影流年》中的隐世高手，剑术通神，行踪不定，只为守护一人。</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 侧边栏：榜单与资讯 -->
+            <aside>
+                <div class="sidebar-widget">
+                    <h3>本周动漫热度榜</h3>
+                    <ul class="ranking-list">
+                        <li class="ranking-item">
+                            <span class="ranking-number">1</span>
+                            <span class="ranking-title">星际穿越：重启</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="ranking-number">2</span>
+                            <span class="ranking-title">魔法学院：觉醒</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="ranking-number">3</span>
+                            <span class="ranking-title">都市侦探事务所</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="ranking-number">4</span>
+                            <span class="ranking-title">末世废土求生</span>
+                        </li>
+                        <li class="ranking-item">
+                            <span class="ranking-number">5</span>
+                            <span class="ranking-title">幻境迷宫</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>最新资讯</h3>
+                    <ul class="ranking-list">
+                        <li class="ranking-item" style="padding-left:0;">
+                            <a href="#" style="font-size: 0.9rem; color: var(--text-main); text-decoration: none;">
+                                <span style="color:var(--text-light); font-size: 0.8rem;">2023-10-24</span><br>
+                                新番《星空之约》第二部定档公布
+                            </a>
+                        </li>
+                        <li class="ranking-item" style="padding-left:0;">
+                            <a href="#" style="font-size: 0.9rem; color: var(--text-main); text-decoration: none;">
+                                <span style="color:var(--text-light); font-size: 0.8rem;">2023-10-22</span><br>
+                                原创剧场版动画《机械之心》首映礼回顾
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>紧扣的星星动漫</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">我们致力于为动漫爱好者提供最全面的资讯、最深度的解析和最活跃的交流社区。在这里，每一颗星星都有故事。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">热血战斗</a></li>
+                    <li><a href="#">校园恋爱</a></li>
+                    <li><a href="#">悬疑推理</a></li>
+                    <li><a href="#">治愈日常</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 紧扣的星星动漫社区. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
