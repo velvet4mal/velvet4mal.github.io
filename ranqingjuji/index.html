@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="燃情狙击手 - 专业狙击手训练与战术装备指南，包含精准射击技巧、心理素质培养、实战场景解析及专业狙击步枪推荐。">
+    <meta name="keywords" content="燃情狙击手, 狙击手, 射击技巧, 狙击步枪, 战术装备, 狙击训练">
+    <title>燃情狙击手-专业狙击训练与战术装备指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #c0392b;
+            --secondary-color: #2c3e50;
+            --accent-color: #f39c12;
+            --bg-dark: #1a1a1a;
+            --bg-card: #252525;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-subscribe {
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .btn-subscribe:hover {
+            background-color: #a93226;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/sniperhero/1920/1080') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .btn-hero {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(192, 57, 43, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-hero:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(192, 57, 43, 0.6);
+        }
+
+        /* 核心栏目 */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* 训练技巧列表 */
+        .training-section {
+            background-color: #222;
+            padding: 80px 0;
+        }
+
+        .training-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .training-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .training-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.05);
+            line-height: 1;
+        }
+
+        .training-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .training-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* 装备展示 */
+        .gear-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gear-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .gear-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gear-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gear-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .gear-card:hover .gear-overlay {
+            transform: translateY(0);
+        }
+
+        .gear-overlay h4 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .gear-overlay span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            margin-bottom: 15px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            display: none;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 60px 0 30px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #222;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none; /* 简化处理，移动端隐藏菜单 */
+            }
+            .training-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M5 12v-2a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/><path d="M12 12v9"/><path d="M12 21l-3-3"/><path d="M12 21l3-3"/></svg>
+                <span>燃情狙击手</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#skills">核心技巧</a>
+                <a href="#gear">装备图鉴</a>
+                <a href="#training">实战训练</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#subscribe" class="btn-subscribe">加入社群</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>精准 · 冷静 · 绝杀</h1>
+                <p>探索狙击手的终极艺术。从心理素质构建到千米精准射击，这里有你需要的所有专业知识与实战指南。</p>
+                <a href="#skills" class="btn-hero">开始训练</a>
+            </div>
+        </section>
+
+        <!-- 核心优势 -->
+        <section class="container">
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>精准射击体系</h3>
+                    <p>掌握风偏修正、距离计算与弹道下坠的深层原理，构建从米到公里的全距离射击能力。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>战术心理素质</h3>
+                    <p>狙击手不仅仅是枪手，更是观察者。学习如何在高压环境下保持绝对的冷静与专注。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🔭</div>
+                    <h3>侦察与定位</h3>
+                    <p>如何利用地形、光影与自然遮蔽物进行隐蔽，并建立高效的战场观察与目标锁定系统。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 技巧详解 -->
+        <section id="skills" class="training-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>狙击手核心技巧</h2>
+                </div>
+                <div class="training-list">
+                    <div class="training-item">
+                        <div class="training-number">01</div>
+                        <div class="training-content">
+                            <h3>环境因素分析</h3>
+                            <p>风速、气温、气压、湿度以及空气密度变化，都会直接影响弹道轨迹。掌握气象数据的读取与换算是成为神枪手的第一步。</p>
+                        </div>
+                    </div>
+                    <div class="training-item">
+                        <div class="training-number">02</div>
+                        <div class="training-content">
+                            <h3>呼吸控制与击发</h3>
+                            <p>在狙击界，"呼气时击发"是铁律。通过建立稳定的呼吸节奏，消除身体微颤，实现毫厘之间的精准命中。</p>
+                        </div>
+                    </div>
+                    <div class="training-item">
+                        <div class="training-number">03</div>
+                        <div class="training-content">
+                            <h3>卧姿与跪姿稳固</h3>
+                            <p>不同的射击姿势决定了接触面积与稳定性。学习如何利用身体重心和地形构建最稳固的射击平台。</p>
+                        </div>
+                    </div>
+                    <div class="training-item">
+                        <div class="training-number">04</div>
+                        <div class="training-content">
+                            <h3>伪装与隐蔽技术</h3>
+                            <p>减少雷达反射截面，融入环境背景色，利用自然植被进行遮挡。真正的狙击手往往在敌人发现之前就已经消失。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 装备图鉴 -->
+        <section id="gear" class="container">
+            <div class="section-title">
+                <h2>硬核装备图鉴</h2>
+            </div>
+            <div class="gear-grid">
+                <div class="gear-card">
+                    <img src="https://picsum.photos/seed/sniper1/400/300" alt="高精度狙击步枪">
+                    <div class="gear-overlay">
+                        <h4>高精度狙击步枪</h4>
+                        <span>适合千米远距离射击</span>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <img src="https://picsum.photos/seed/sniper2/400/300" alt="瞄准镜与测距仪">
+                    <div class="gear-overlay">
+                        <h4>高倍率瞄准镜</h4>
+                        <span>具备倍率调节与测距功能</span>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <img src="https://picsum.photos/seed/sniper3/400/300" alt="战术夜视仪">
+                    <div class="gear-overlay">
+                        <h4>战术夜视仪</h4>
+                        <span>低光环境下的视觉增强</span>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <img src="https://picsum.photos/seed/sniper4/400/300" alt="战术背心与通讯设备">
+                    <div class="gear-overlay">
+                        <h4>多功能战术背心</h4>
+                        <span>多功能挂点与通讯保障</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="container">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="faq-section">
+                <div class="faq-item active">
+                    <div class="faq-question">成为狙击手需要具备哪些基本身体条件？</div>
+                    <div class="faq-answer">通常要求具备良好的视力（矫正后视力达标）、强健的体能以适应长时间潜伏和负重行军，以及极高的专注力和心理承受能力。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">民用射击与军事狙击训练有何区别？</div>
+                    <div class="faq-answer">军事狙击更强调团队配合、战场生存、敌后渗透及复杂的战术机动，而民用射击主要侧重于靶场精准度和个人技术展示。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何开始系统的狙击训练？</div>
+                    <div class="faq-answer">建议从基础枪械保养、卧姿射击姿势开始，逐步学习弹道学原理。推荐参加正规的射击俱乐部课程，并在专业教练指导下进行。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="subscribe">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于燃情狙击手</h4>
+                    <p>我们致力于传播专业的狙击手知识与战术文化，为射击爱好者提供严谨、客观的参考资料。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">新手入门</a></li>
+                        <li><a href="#">装备评测</a></li>
+                        <li><a href="#">战术视频</a></li>
+                        <li><a href="#">社区论坛</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>邮箱: contact@sniperguide.com</li>
+                        <li>地址: 射击训练中心A区</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 燃情狙击手. 保留所有权利. 本站内容仅供学习与交流，严禁用于非法用途。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 如果需要手风琴效果（点击一个关闭其他），取消下面注释
+                    /*
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) otherItem.classList.remove('active');
+                    });
+                    */
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
