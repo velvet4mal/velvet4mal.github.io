@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QQ徽章 - 资深玩家珍藏与获取攻略指南</title>
+    <meta name="description" content="本站提供全面的QQ徽章资料库，包含稀有徽章获取攻略、等级体系说明、展示框搭配技巧及常见问题解答，帮助用户高效收集心仪的QQ徽章。">
+    <meta name="keywords" content="QQ徽章,QQ等级徽章,QQ勋章,腾讯徽章,QQ装扮,徽章攻略">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #12B7F5; /* QQ Blue */
+            --secondary-color: #FFC300; /* QQ Gold */
+            --bg-color: #F5F7FA;
+            --card-bg: #FFFFFF;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --border-radius: 12px;
+            --spacing-unit: 20px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #E0F7FA 0%, #E1F5FE 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #0277BD;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #546E7A;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.6);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #455A64;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Badge Grid */
+        .badge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 25px;
+        }
+
+        .badge-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .badge-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(18, 183, 245, 0.15);
+            border-color: rgba(18, 183, 245, 0.2);
+        }
+
+        .badge-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background-color: #F0F8FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .badge-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .badge-card .type {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            background: #F5F5F5;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* Guide Section */
+        .guide-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .article-list article {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .article-list h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .article-list p {
+            color: var(--text-sub);
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more::after {
+            content: '→';
+            margin-left: 5px;
+            transition: transform 0.2s;
+        }
+
+        .read-more:hover::after {
+            transform: translateX(5px);
+        }
+
+        .sidebar {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #F0F0F0;
+            font-size: 1.2rem;
+        }
+
+        .checklist li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #B0BEC5;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #37474F;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplified for single file demo */
+            }
+            .guide-content {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .badge-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="#12B7F5"/>
+                        <path d="M7 10C7 10.55 6.55 11 6 11C5.45 11 5 10.55 5 10C5 9.45 5.45 9 6 9C6.55 9 7 9.45 7 10ZM18 10C18 10.55 17.55 11 17 11C16.45 11 16 10.55 16 10C16 9.45 16.45 9 17 9C17.55 9 18 9.45 18 10ZM12 15C9.67 15 7.69 16.46 6.89 18.5H17.11C16.31 16.46 14.33 15 12 15Z" fill="white"/>
+                    </svg>
+                    <span>徽章阁</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#types" class="active">徽章分类</a>
+                    <a href="#guide">获取攻略</a>
+                    <a href="#faq">常见问题</a>
+                    <a href="#about">关于本站</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索QQ徽章的世界</h1>
+                <p>从等级徽章到活动限定，全方位解析QQ徽章体系。收集你的专属荣耀标识，点亮个人主页。</p>
+                <div class="hero-tags">
+                    <span class="tag">等级徽章</span>
+                    <span class="tag">VIP徽章</span>
+                    <span class="tag">活动限定</span>
+                    <span class="tag">装扮徽章</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types Section -->
+        <section id="types" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见QQ徽章类型</h2>
+                    <p>了解不同种类的QQ徽章及其获取途径</p>
+                </div>
+                
+                <div class="badge-grid">
+                    <article class="badge-card">
+                        <div class="badge-icon" style="color: #FFC300;">★</div>
+                        <h3>等级徽章</h3>
+                        <span class="type">成长型</span>
+                        <p style="font-size:0.85rem; margin-top:8px; color:#999;">基于QQ等级自动解锁</p>
+                    </article>
+                    <article class="badge-card">
+                        <div class="badge-icon" style="color: #FF5252;">💎</div>
+                        <h3>VIP徽章</h3>
+                        <span class="type">特权型</span>
+                        <p style="font-size:0.85rem; margin-top:8px; color:#999;">开通会员专属标识</p>
+                    </article>
+                    <article class="badge-card">
+                        <div class="badge-icon" style="color: #4CAF50;">🎮</div>
+                        <h3>游戏徽章</h3>
+                        <span class="type">互动型</span>
+                        <p style="font-size:0.85rem; margin-top:8px; color:#999;">游戏成就与公会徽章</p>
+                    </article>
+                    <article class="badge-card">
+                        <div class="badge-icon" style="color: #9C27B0;">🎁</div>
+                        <h3>活动限定</h3>
+                        <span class="type">时效型</span>
+                        <p style="font-size:0.85rem; margin-top:8px; color:#999;">节日或主题活动获取</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="section" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>新手收集指南</h2>
+                    <p>如何快速获取并管理你的QQ徽章</p>
+                </div>
+
+                <div class="guide-content">
+                    <div class="article-list">
+                        <article>
+                            <h3>如何查看和管理徽章</h3>
+                            <p>进入QQ个人中心，点击“我的勋章”或“徽章”入口。在这里你可以看到所有已获得的徽章列表，并支持自定义展示顺序，将最想展示的徽章拖动到顶部。</p>
+                            <a href="#" class="read-more">查看管理教程</a>
+                        </article>
+                        <article>
+                            <h3>等级徽章的升级规则</h3>
+                            <p>QQ等级徽章主要根据用户的在线时长和升级天数计算。保持活跃登录可以加速等级提升，从而解锁更高阶的图标和专属徽章。</p>
+                            <a href="#" class="read-more">了解升级机制</a>
+                        </article>
+                        <article>
+                            <h3>活动徽章的获取途径</h3>
+                            <p>关注QQ官方活动或合作游戏的更新公告。许多活动需要通过完成任务、签到或参与社群互动来赢取，部分徽章具有季节性特征。</p>
+                            <a href="#" class="read-more">查看最新活动</a>
+                        </article>
+                    </div>
+
+                    <aside class="sidebar">
+                        <h3>收集 checklist</h3>
+                        <ul class="checklist">
+                            <li>开通QQ会员解锁专属徽章</li>
+                            <li>完成连续签到任务</li>
+                            <li>加入QQ兴趣部落或群组</li>
+                            <li>参与官方线上抽奖活动</li>
+                            <li>绑定手机号提升账号活跃度</li>
+                        </ul>
+                        <div style="margin-top: 25px; padding: 15px; background: #E3F2FD; border-radius: 8px; font-size: 0.9rem; color: #0D47A1;">
+                            <strong>💡 小贴士：</strong><br>
+                            徽章展示框是展示徽章的重要道具，选择与头像或主页风格一致的展示框效果更佳。
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>徽章会过期吗？</h4>
+                        <p>大部分等级徽章和特权徽章是永久有效的。但活动限定徽章通常有展示期限，过期后可能无法在个人主页显示。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>为什么我看不到某个徽章？</h4>
+                        <p>请检查该徽章是否满足获取条件（如等级、会员状态等），并确认你的QQ版本是否为最新版，尝试重启APP刷新列表。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>如何隐藏不想展示的徽章？</h4>
+                        <p>在徽章管理页面，长按或点击设置图标，可以选择隐藏特定徽章，但隐藏后再次获取可能需要重新设置。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于徽章阁</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">本站致力于为用户提供最全的QQ徽章资料与获取攻略。我们专注于整理官方活动信息与用户收藏指南。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">等级查询</a></li>
+                        <li><a href="#">活动日历</a></li>
+                        <li><a href="#">装扮中心</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关服务</h4>
+                    <ul>
+                        <li><a href="#">QQ会员</a></li>
+                        <li><a href="#">QQ秀商城</a></li>
+                        <li><a href="#">腾讯游戏</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 徽章阁资料站 版权所有 | 本站内容仅供参考，所有QQ相关功能请以腾讯官方为准。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+          </html>
