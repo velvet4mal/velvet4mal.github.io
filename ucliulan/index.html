@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UC浏览器网页版入口 - 提供极速、省流、安全的在线网页浏览服务，支持多端同步，海量资讯聚合，一键触达精彩世界。">
+    <meta name="keywords" content="uc浏览器网页版入口,uc浏览器官网,uc浏览器在线版,uc云浏览器,手机浏览器网页版">
+    <title>uc浏览器网页版入口 - 极速安全在线浏览与资讯聚合平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6a00;
+            --secondary-color: #ff9e42;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f5f7fa;
+            --bg-card: #ffffff;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 106, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #e65c00;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff5eb 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 24px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Browser Preview */
+        .browser-preview {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .browser-bar {
+            background: #f0f0f0;
+            padding: 10px 20px;
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot.red { background: #ff5f56; }
+        .dot.yellow { background: #ffbd2e; }
+        .dot.green { background: #27c93f; }
+
+        .browser-content {
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
+            background-size: 20px 20px;
+            min-height: 300px;
+        }
+
+        .browser-mockup {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .mockup-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .mockup-line {
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            flex: 1;
+        }
+
+        .mockup-body {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        .mockup-main {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .mockup-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .mockup-img {
+            width: 100%;
+            height: 120px;
+            background: #eee;
+            border-radius: 4px;
+        }
+
+        .mockup-text {
+            height: 10px;
+            background: #eee;
+            border-radius: 4px;
+        }
+
+        .mockup-text.short { width: 60%; }
+
+        /* Info & Guide */
+        .info-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .info-card h3 {
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        .info-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .info-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* FAQ */
+        .faq-section {
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #2b2b2b;
+            color: #ccc;
+            padding: 40px 0;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand h4 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .footer-col h5 {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 0;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 12px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .info-section {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .mockup-body {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            UC<span>浏览器</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">网页版入口</a></li>
+                <li><a href="#">安卓版下载</a></li>
+                <li><a href="#">iOS版下载</a></li>
+                <li><a href="#">极速模式</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-outline" onclick="window.open('https://mbrowser.uc.cn', '_blank')">立即访问</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>uc浏览器网页版入口</h1>
+        <p>随时随地，极速上网。UC浏览器网页版为您提供轻量、安全、智能的在线浏览体验，海量资讯一键触达。</p>
+        <div style="display: flex; justify-content: center; gap: 15px;">
+            <button class="btn btn-primary" onclick="window.open('https://mbrowser.uc.cn', '_blank')">打开UC浏览器</button>
+            <button class="btn btn-outline" onclick="document.getElementById('guide').scrollIntoView({behavior: 'smooth'})">使用指南</button>
+        </div>
+        
+        <div class="hero-features">
+            <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <span>极速加载</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💰</div>
+                <span>省流量模式</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🛡️</div>
+                <span>安全防护</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📱</div>
+                <span>多端同步</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="container">
+    
+    <!-- 核心功能介绍 -->
+    <section id="features">
+        <h2 class="section-title">为什么选择UC浏览器网页版</h2>
+        <div class="feature-grid">
+            <article class="feature-card">
+                <h3>智能极速引擎</h3>
+                <p>采用新一代渲染内核，优化网页加载算法。在弱网环境下也能保持流畅浏览，大幅提升打开速度，减少等待时间。</p>
+            </article>
+            <article class="feature-card">
+                <h3>海量资讯聚合</h3>
+                <p>汇聚全网热点新闻、娱乐八卦、科技前沿及生活技巧。智能推荐算法根据您的兴趣定制内容，让您不错过任何精彩。</p>
+            </article>
+            <article class="feature-card">
+                <h3>极致省流体验</h3>
+                <p>内置智能压缩技术，有效减少数据流量消耗。开启省流模式后，图片自动优化，视频加载更高效，为您的网络流量减负。</p>
+            </article>
+            <article class="feature-card">
+                <h3>安全绿色环境</h3>
+                <p>具备强大的恶意网址识别能力，自动拦截钓鱼网站和病毒链接。提供夜间护眼模式，保护视力，营造舒适的阅读环境。</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- 产品预览 -->
+    <section class="browser-preview">
+        <div class="browser-bar">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+        </div>
+        <div class="browser-content">
+            <div class="browser-mockup">
+                <div class="mockup-header">
+                    <div class="mockup-line" style="width: 40%"></div>
+                </div>
+                <div class="mockup-body">
+                    <div class="mockup-main">
+                        <div class="mockup-img" style="background: linear-gradient(to right, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);"></div>
+                        <div class="mockup-text" style="width: 80%"></div>
+                        <div class="mockup-text" style="width: 60%"></div>
+                        <div class="mockup-text" style="width: 90%"></div>
+                    </div>
+                    <div class="mockup-sidebar">
+                        <div class="mockup-img" style="background: #eee; height: 80px;"></div>
+                        <div class="mockup-text"></div>
+                        <div class="mockup-text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用指南与详情 -->
+    <section id="guide">
+        <h2 class="section-title">使用指南与功能说明</h2>
+        <div class="info-section">
+            <article class="info-card">
+                <h3>如何快速进入网页版</h3>
+                <ul class="info-list">
+                    <li>直接点击页面顶部或底部的“立即访问”按钮，跳转至UC浏览器官方入口。</li>
+                    <li>在手机浏览器中搜索“UC浏览器官网”，下载安装App后即可体验完整功能。</li>
+                    <li>支持在电脑浏览器中打开UC浏览器官网，即可在手机端扫码同步书签和浏览记录。</li>
+                </ul>
+            </article>
+            <article class="info-card">
+                <h3>特色功能设置建议</h3>
+                <ul class="info-list">
+                    <li><strong>广告过滤：</strong>进入设置开启广告过滤，大幅提升浏览纯净度。</li>
+                    <li><strong>夜间模式：</strong>在光线较暗环境下，开启夜间模式保护视力。</li>
+                    <li><strong>下载管理：</strong>利用强大的下载管理器，支持断点续传和多任务下载。</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="faq-section">
+        <h2 class="section-title">常见问题 (FAQ)</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">UC浏览器网页版和手机App有什么区别？</div>
+            <div class="faq-answer">网页版入口主要用于快速访问官网、下载安装包或查看基础资讯。完整功能体验（如极速模式、省流设置、书签同步）需要在手机上安装UC浏览器App。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">网页版支持哪些设备？</div>
+            <div class="faq-answer">网页版入口适配所有主流移动设备（iOS、Android）以及PC端浏览器，确保在任何终端都能顺畅访问。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">使用UC浏览器网页版会消耗流量吗？</div>
+            <div class="faq-answer">网页版本身是一个轻量级入口页面，浏览此页面消耗的流量极小。但若跳转至第三方网站浏览内容，流量消耗取决于目标网页的大小。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">如何确保浏览安全？</div>
+            <div class="faq-answer">UC浏览器内置安全中心，会对网址进行实时检测。建议您在设置中开启“安全防护”和“恶意网址拦截”功能。</div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h4>UC浏览器</h4>
+                <p>阿里巴巴旗下产品，致力于为用户提供安全、极速、省流、智能的移动上网体验。</p>
+            </div>
+            <div class="footer-col">
+                <h5>产品服务</h5>
+                <ul>
+                    <li><a href="#">安卓版下载</a></li>
+                    <li><a href="#">iOS版下载</a></li>
+                    <li><a href="#">电脑版下载</a></li>
+                    <li><a href="#">UC云浏览器</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>帮助中心</h5>
+                <ul>
+                    <li><a href="#">使用教程</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">服务协议</a></li>
+                    <li><a href="#">意见反馈</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>关注我们</h5>
+                <ul>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">用户社区</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023-2024 UC浏览器. All Rights Reserved. 本页面仅为展示用，非官方网站。</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 简单的FAQ折叠逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // 关闭其他已打开的项
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // 切换当前项
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
